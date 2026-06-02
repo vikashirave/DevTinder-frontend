@@ -3,3 +3,5 @@
 - Created a Vite + React application
 - Remove unecessary code and create a a Hello
 - install tailwind css
+- install daisy ui
+- Add Navbar component to app.jsx
