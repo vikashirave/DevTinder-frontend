@@ -17,3 +17,6 @@
 - install react-redux and redux toolkit => configure store => provider => createSlice => add reducer        to     store
 - login and see if your data is coming properly in the store
 - NavBar should update as soon as user Logs in
+- if token not present redirect user to login page
+- logout
+- profile
