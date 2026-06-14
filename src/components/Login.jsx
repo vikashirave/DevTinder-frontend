@@ -8,20 +8,22 @@ import { BASE_URL } from '../utils/constants';
 function Login() {
   const [emailId, setEmailId] = useState("akshay@gmail.com");
   const [password, setPassword] = useState("Akshay@123");
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
-  const nagivate = useNavigate();
+  const navigate = useNavigate();
 
   const handleLogin = async() => {
-    try{
+    try {
       const res = await axios.post(BASE_URL + "/login", {
         emailId,
         password
       }, {withCredentials: true})
       console.log(res.data);
       dispatch(addUser(res.data));
-      return nagivate("/");
-    }catch(err){
-      console.error(err);
+      return navigate("/");
+    } catch(err) {
+      console.log(err.response?.data);
+      setError(err.response?.data || "Login failed. Please try again.");
     }
   }
 
@@ -48,6 +50,7 @@ function Login() {
               />
             </label>
           </div>
+          <p className="text-error">{error}</p>
           <div className="card-actions justify-center">
             <button onClick={handleLogin} className="btn btn-primary">Log In</button>
           </div>
