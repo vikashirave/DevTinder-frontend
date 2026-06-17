@@ -4,7 +4,7 @@ function UserCard({ user }) {
     console.log(user);
     const {firstName, lastName, photoUrl, age, gender, about} = user;
   return (
-    <div className="card bg-base-300 w-96 shadow-sm">
+    <div className="card bg-base-300 w-96 shadow-sm my-10">
     <figure>
         <img
         src={user?.photoUrl}
